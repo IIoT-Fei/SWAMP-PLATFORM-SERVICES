@@ -29,3 +29,5 @@ A seguinte tela deve ser apresentada.
 - Redis
 - IoT-Agent JSON
 - NGSI-LD Wrapper
+
+<img width="890" alt="swamp_platform_architeture_v1 2 0" src="https://user-images.githubusercontent.com/9273551/53274350-b559b580-36d5-11e9-9be5-5b8898486418.png">
