@@ -67,6 +67,16 @@ services:
     volumes:
       - redisdata:/data
 
+  ngsi-ld_wrapper:
+    image: fiware/ngsi-ld_wrapper
+    container_name: ngsildWrapper
+    ports:
+      - "1030:1030"
+    links:
+      - orion
+    environment:
+      - NGSI_Endpoint=http://orion:1026
+
   iot_agent:
     image: fiware/iotagent-json
     hostname: iotAgentJson
@@ -89,15 +99,28 @@ services:
         - "IOTA_HTTP_PORT=7896"
         - "IOTA_PROVIDER_URL=http://iot-agent:4041"
     
-  ngsi-ld_wrapper:
-    image: fiware/ngsi-ld_wrapper
-    container_name: ngsildWrapper
-    ports:
-      - "1030:1030"
-    links:
-      - orion
-    environment:
-      - NGSI_Endpoint=http://orion:1026
+  # iot_agent:
+  #   image: fiware/iotagent-json
+  #   hostname: iotAgentJson
+  #   depends_on:
+  #       - mongo 
+  #   expose:
+  #       - "4041"
+  #       - "7896"
+  #   ports:
+  #       - "4041:4041"
+  #       - "7896:7896"
+  #   environment:
+  #       - "IOTA_CB_HOST=ngsi-ld_wrapper"
+  #       - "IOTA_CB_PORT=1030"
+  #       - "IOTA_NORTH_PORT=4041"
+  #       - "IOTA_REGISTRY_TYPE=mongodb"
+  #       - "IOTA_MONGO_HOST=mongo"
+  #       - "IOTA_MONGO_PORT=27017"
+  #       - "IOTA_MONGO_DB=iotagent-json"
+  #       - "IOTA_HTTP_PORT=7896"
+  #       - "IOTA_PROVIDER_URL=http://iot-agent:4041"
+
 
 volumes:
   mongodata:
