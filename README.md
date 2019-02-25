@@ -31,3 +31,9 @@ A seguinte tela deve ser apresentada.
 - NGSI-LD Wrapper
 
 <img width="890" alt="swamp_platform_architeture_v1 2 0" src="https://user-images.githubusercontent.com/9273551/53274350-b559b580-36d5-11e9-9be5-5b8898486418.png">
+
+## Dashboard
+
+Este repositório também possuí um tamplate de dashboard para o grafana como o apresentado abaixo. 
+
+![screen shot 2019-02-25 at 12 56 22](https://user-images.githubusercontent.com/9273551/53349895-d51ef280-38fc-11e9-9d18-4977ca684d3a.png)
