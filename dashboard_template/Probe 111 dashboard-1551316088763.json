@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_PROBE_111 DATA",
-      "label": "Probe 111 Data",
+      "name": "DS_CRATEDB-PROBE-SERIES",
+      "label": "CrateDB-Probe-Series",
       "description": "",
       "type": "datasource",
       "pluginId": "crate-datasource",
@@ -61,7 +61,7 @@
   "links": [],
   "panels": [
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -69,46 +69,47 @@
         "y": 0
       },
       "id": 41,
-      "panels": [],
+      "panels": [
+        {
+          "bgColor": "rgba(186, 223, 244, 0)",
+          "clockType": "24 hour",
+          "countdownSettings": {
+            "customFormat": null,
+            "endCountdownTime": "2019-02-25T13:21:00.000Z",
+            "endText": "00:00:00"
+          },
+          "dateSettings": {
+            "dateFormat": "YYYY-MM-DD",
+            "fontSize": "15px",
+            "fontWeight": "normal",
+            "showDate": true
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 24,
+            "x": 0,
+            "y": 1
+          },
+          "id": 43,
+          "links": [],
+          "mode": "time",
+          "offsetFromUtc": null,
+          "offsetFromUtcMinutes": null,
+          "refreshSettings": {
+            "syncWithDashboard": false
+          },
+          "timeSettings": {
+            "customFormat": "HH:mm:ss",
+            "fontSize": "25px",
+            "fontWeight": "normal"
+          },
+          "title": "",
+          "transparent": false,
+          "type": "grafana-clock-panel"
+        }
+      ],
       "title": "Date & Clock",
       "type": "row"
-    },
-    {
-      "bgColor": "rgba(186, 223, 244, 0)",
-      "clockType": "24 hour",
-      "countdownSettings": {
-        "customFormat": null,
-        "endCountdownTime": "2019-02-25T13:21:00.000Z",
-        "endText": "00:00:00"
-      },
-      "dateSettings": {
-        "dateFormat": "YYYY-MM-DD",
-        "fontSize": "15px",
-        "fontWeight": "normal",
-        "showDate": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 24,
-        "x": 0,
-        "y": 1
-      },
-      "id": 43,
-      "links": [],
-      "mode": "time",
-      "offsetFromUtc": null,
-      "offsetFromUtcMinutes": null,
-      "refreshSettings": {
-        "syncWithDashboard": false
-      },
-      "timeSettings": {
-        "customFormat": "HH:mm:ss",
-        "fontSize": "25px",
-        "fontWeight": "normal"
-      },
-      "title": "",
-      "transparent": false,
-      "type": "grafana-clock-panel"
     },
     {
       "collapsed": false,
@@ -116,7 +117,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 1
       },
       "id": 30,
       "panels": [],
@@ -132,9 +133,9 @@
       "colors": [
         "#1f78c1",
         "#629e51",
-        "#f9934e"
+        "#e24d42"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "celsius",
       "gauge": {
         "maxValue": 45,
@@ -147,7 +148,7 @@
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 5
+        "y": 2
       },
       "id": 10,
       "interval": null,
@@ -224,7 +225,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -237,7 +238,7 @@
         "h": 3,
         "w": 3,
         "x": 6,
-        "y": 5
+        "y": 2
       },
       "id": 12,
       "interval": null,
@@ -302,7 +303,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -313,7 +314,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -326,7 +327,7 @@
         "h": 3,
         "w": 3,
         "x": 9,
-        "y": 5
+        "y": 2
       },
       "id": 16,
       "interval": null,
@@ -391,7 +392,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -402,11 +403,11 @@
         "#629e51",
         "#629e51"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "humidity",
       "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
+        "maxValue": 90,
+        "minValue": 10,
         "show": true,
         "thresholdLabels": true,
         "thresholdMarkers": true
@@ -415,7 +416,7 @@
         "h": 6,
         "w": 6,
         "x": 12,
-        "y": 5
+        "y": 2
       },
       "id": 26,
       "interval": null,
@@ -468,7 +469,7 @@
           "whereClauses": []
         }
       ],
-      "thresholds": "20,0",
+      "thresholds": "30,0",
       "title": "Current Humidity",
       "transparent": true,
       "type": "singlestat",
@@ -491,7 +492,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -504,7 +505,7 @@
         "h": 3,
         "w": 3,
         "x": 18,
-        "y": 5
+        "y": 2
       },
       "id": 20,
       "interval": null,
@@ -569,7 +570,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -580,7 +581,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -593,7 +594,7 @@
         "h": 3,
         "w": 3,
         "x": 21,
-        "y": 5
+        "y": 2
       },
       "id": 22,
       "interval": null,
@@ -658,7 +659,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -669,7 +670,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "celsius",
       "gauge": {
         "maxValue": 100,
@@ -682,7 +683,7 @@
         "h": 3,
         "w": 3,
         "x": 6,
-        "y": 8
+        "y": 5
       },
       "id": 18,
       "interval": null,
@@ -747,7 +748,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -758,7 +759,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "dateTimeAsIso",
       "gauge": {
         "maxValue": 100,
@@ -771,7 +772,7 @@
         "h": 3,
         "w": 3,
         "x": 9,
-        "y": 8
+        "y": 5
       },
       "id": 38,
       "interval": null,
@@ -847,7 +848,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "humidity",
       "gauge": {
         "maxValue": 100,
@@ -860,7 +861,7 @@
         "h": 3,
         "w": 3,
         "x": 18,
-        "y": 8
+        "y": 5
       },
       "id": 24,
       "interval": null,
@@ -925,7 +926,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -936,7 +937,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_PROBE_111 DATA}",
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
       "format": "dateTimeAsIso",
       "gauge": {
         "maxValue": 100,
@@ -949,7 +950,7 @@
         "h": 3,
         "w": 3,
         "x": 21,
-        "y": 8
+        "y": 5
       },
       "id": 39,
       "interval": null,
@@ -1022,7 +1023,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 8
       },
       "id": 28,
       "panels": [],
@@ -1034,13 +1035,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROBE_111 DATA}",
-      "fill": 4,
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
+      "fill": 3,
       "gridPos": {
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 9
       },
       "id": 2,
       "legend": {
@@ -1059,11 +1060,11 @@
         "values": true
       },
       "lines": true,
-      "linewidth": 3,
+      "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 2,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
@@ -1094,12 +1095,30 @@
           "whereClauses": []
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": false,
+          "line": true,
+          "op": "gt",
+          "value": 30,
+          "yaxis": "left"
+        },
+        {
+          "colorMode": "custom",
+          "fill": false,
+          "line": true,
+          "lineColor": "#1f78c1",
+          "op": "lt",
+          "value": 12,
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Temperature Graph",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1141,7 +1160,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 18
       },
       "id": 45,
       "panels": [],
@@ -1153,13 +1172,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROBE_111 DATA}",
-      "fill": 4,
+      "datasource": "${DS_CRATEDB-PROBE-SERIES}",
+      "fill": 3,
       "gridPos": {
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 19
       },
       "id": 8,
       "legend": {
@@ -1173,15 +1192,15 @@
         "rightSide": false,
         "show": true,
         "sideWidth": null,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
-      "linewidth": 3,
+      "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 2,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
@@ -1260,7 +1279,7 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
@@ -1292,5 +1311,5 @@
   "timezone": "browser",
   "title": "Probe 111 dashboard",
   "uid": "ANw0Q2rmk",
-  "version": 54
+  "version": 4
 }
