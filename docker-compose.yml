@@ -52,7 +52,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - GF_INSTALL_PLUGINS=crate-datasource,grafana-clock-panel,grafana-worldmap-panel,mtanda-histogram-panel,simpod-json-datasource,linksmart-sensorthings-datasource,natel-plotly-panel
+      - GF_INSTALL_PLUGINS=crate-datasource,grafana-clock-panel,grafana-worldmap-panel,simpod-json-datasource,natel-plotly-panel,satellogic-3d-globe-panel,jdbranham-diagram-panel,ryantxu-ajax-panel,citilogics-geoloop-panel
     depends_on:
       - crate
 
