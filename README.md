@@ -14,26 +14,28 @@ Com este comando os serviços devem ser iniciados. Ao final da inicialização e
 docker-compose ps
 ```
 
-A seguinte tela deve ser apresentada. 
+A seguinte saída deve ser apresentada. 
 
-![screen shot 2019-02-11 at 20 51 29](https://user-images.githubusercontent.com/9273551/52599240-3ba50a80-2e3f-11e9-85d7-e5583fea1bf2.png)
-
+```bash
+          Name                        Command               State                                        Ports
+--------------------------------------------------------------------------------------------------------------------------------------------------
+db-mongo                   docker-entrypoint.sh --bin ...   Up       0.0.0.0:27017->27017/tcp
+db-mysql                   docker-entrypoint.sh mysqld      Up       0.0.0.0:3306->3306/tcp, 33060/tcp
+fiware-draco               ../scripts/start.sh              Up       10000/tcp, 0.0.0.0:5050->5050/tcp, 8080/tcp, 8443/tcp, 0.0.0.0:9090->9090/tcp
+fiware-orion               /usr/bin/contextBroker -fg ...   Up       0.0.0.0:1026->1026/tcp
+iot-agent-json_1           pm2-runtime bin/iotagent-j ...   Up       0.0.0.0:4041->4041/tcp, 0.0.0.0:7896->7896/tcp
+iot-agent-ul_1             pm2-runtime bin/iotagent-u ...   Up       0.0.0.0:4042->4042/tcp, 0.0.0.0:7897->7897/tcp
+metabase                   /app/run_metabase.sh             Exit 1
+```
 
 ## Serviços configurados 
 
 - Orion Context Broker 
 - Mongo DB
-- Quantum Leap
-- Crate DB
-- Grafana 
-- Redis
+- Draco
+- MySQL
+- Metabase 
+- IoT-Agent Ultralight
 - IoT-Agent JSON
-- NGSI-LD Wrapper
 
-<img width="890" alt="swamp_platform_architeture_v1 2 0" src="https://user-images.githubusercontent.com/9273551/53274350-b559b580-36d5-11e9-9be5-5b8898486418.png">
-
-## Dashboard
-
-Este repositório também possuí um tamplate de dashboard para o grafana como o apresentado abaixo. 
-
-![screen shot 2019-02-25 at 12 56 22](https://user-images.githubusercontent.com/9273551/53349895-d51ef280-38fc-11e9-9d18-4977ca684d3a.png)
+![SWAMP Architecture](images/swamp_architecture.png)
