@@ -1,4 +1,4 @@
-# SWAMP Platform Services v1.0.0
+# SWAMP Platform Services
 
 ![APM](https://img.shields.io/badge/swamp-v1.0.0-green.svg)
 
@@ -38,4 +38,5 @@ iot-agent-ul_1             pm2-runtime bin/iotagent-u ...   Up       0.0.0.0:404
 - IoT-Agent Ultralight
 - IoT-Agent JSON
 
-![SWAMP Architecture](images/swamp_architecture.png)
+![Services_Stack_Layers_FEI_v2 0 2](https://user-images.githubusercontent.com/9273551/59893027-d2677200-93b1-11e9-93dd-bdab7b211774.png)
+
