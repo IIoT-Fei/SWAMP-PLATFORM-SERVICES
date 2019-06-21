@@ -1,20 +1,20 @@
-# GEs FIWARE para a plataforma SWAMP
+# SWAMP Core Services v1.0.0
 
-## Utilizando os serviços 
+## Using the services 
 
-Para utilizar os serviços basta clonar este repositório em seu ambientew de trabalho e uilizar o seguinte comando para iniciar os serviços. 
+To start use the services, simply clone this Repo on your desktop. After this, type the following command to start the compose.
 
 ```bash
 docker-compose up -d
 ```
-Com este comando os serviços devem ser iniciados. Ao final da inicialização execute o comando a seguir para a confirmação de que todos os serviços estajam em execução. 
 
+With this command the services must be started. At the end of the task, run the following command to execute.
 
 ```bash
 docker-compose ps
 ```
 
-A seguinte saída deve ser apresentada. 
+The terminal must show something like this.
 
 ```bash
           Name                        Command               State                                        Ports
@@ -25,16 +25,14 @@ fiware-draco               ../scripts/start.sh              Up       10000/tcp, 
 fiware-orion               /usr/bin/contextBroker -fg ...   Up       0.0.0.0:1026->1026/tcp
 iot-agent-json_1           pm2-runtime bin/iotagent-j ...   Up       0.0.0.0:4041->4041/tcp, 0.0.0.0:7896->7896/tcp
 iot-agent-ul_1             pm2-runtime bin/iotagent-u ...   Up       0.0.0.0:4042->4042/tcp, 0.0.0.0:7897->7897/tcp
-metabase                   /app/run_metabase.sh             Exit 1
 ```
 
-## Serviços configurados 
+## Services Configured
 
 - Orion Context Broker 
 - Mongo DB
 - Draco
-- MySQL
-- Metabase 
+- MySQL 
 - IoT-Agent Ultralight
 - IoT-Agent JSON
 
