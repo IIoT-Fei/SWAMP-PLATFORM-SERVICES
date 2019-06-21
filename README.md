@@ -38,5 +38,6 @@ iot-agent-ul_1             pm2-runtime bin/iotagent-u ...   Up       0.0.0.0:404
 - IoT-Agent Ultralight
 - IoT-Agent JSON
 
-![Services_Stack_Layers_FEI_v2 0 2](https://user-images.githubusercontent.com/9273551/59893027-d2677200-93b1-11e9-93dd-bdab7b211774.png)
+![Services_Stack_Layers_FEI_v2 0 2-2](https://user-images.githubusercontent.com/9273551/59893352-098a5300-93b3-11e9-8224-95786efe4004.png)
+
 
