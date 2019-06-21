@@ -1,4 +1,6 @@
-# SWAMP Core Services v1.0.0
+# SWAMP Platform Services v1.0.0
+
+![APM](https://img.shields.io/badge/swamp-v1.0.0-green.svg)
 
 ## Using the services 
 
