@@ -1,6 +1,6 @@
 # SWAMP Platform Services
 
-![APM](https://img.shields.io/badge/swamp-v1.0.0-green.svg)
+![APM](https://img.shields.io/badge/swamp-v1.0.1-green.svg)
 
 ## Using the services 
 
@@ -37,7 +37,10 @@ iot-agent-ul_1             pm2-runtime bin/iotagent-u ...   Up       0.0.0.0:404
 - MySQL 
 - IoT-Agent Ultralight
 - IoT-Agent JSON
+- Virtuoso DB
+- SEPA
 
-![Services_Stack_Layers_FEI_v2 0 2-2](https://user-images.githubusercontent.com/9273551/59893352-098a5300-93b3-11e9-8224-95786efe4004.png)
+![Services_Stack_Layers_FEI_v2 0 2](https://user-images.githubusercontent.com/9273551/59941981-f750f900-9434-11e9-95ec-8c03c8379574.png)
+
 
 
